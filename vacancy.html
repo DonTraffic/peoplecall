@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>вакансии карьера</title>
+    <link rel="stylesheet" href="vacancy.css">
+</head>
+
+<body>
+    <main>
+        <header class="header wrapper shadow">
+            <div class="header__menu">
+                <img class="header__menu-logo" src="/assets/Logo-204cbb03.svg" alt="Logo">
+
+                <nav class="header__menu-nav">
+                    <a class="header__menu-nav-link" href="#about">какие задачи мы решаем</a>
+                    <a class="header__menu-nav-link" href="#directions">направления</a>
+                    <a class="header__menu-nav-link" href="#methods">методы</a>
+                    <a class="header__menu-nav-link" href="#priceList">цены</a>
+                    <a class="header__menu-nav-link" href="/blog">блог</a>
+                </nav>
+
+                <button class="header__menu-btn button">
+                    заказать услуги
+                    <img class="button__svg" src="/assets/buttonArrow-9a2b3f11.svg" alt="@">
+                </button>
+            </div>
+
+            <div class="header__content">
+                <div class="header__content-left">
+                    <h1 class="header__content-left-title">Контакт центр <br> для людей</h1>
+                    <p class="header__content-left-text">
+                        это надежный катализатор для разрешения множества ситуаций, будь то вопросы, заказы,
+                        жалобы или запросы на техническую поддержку, обеспечивая клиентам качественное обслуживание и
+                        удовлетворение их потребностей.
+                    </p>
+                    <button class="header__content-left-btn button">
+                        заказать обратный звонок
+                        <img class="button__svg" src="/assets/buttonArrow-9a2b3f11.svg" alt="@">
+                    </button>
+                </div>
+
+                <img class="header__content-right" src="/assets/heroGlobus-9b8b311a.webp" alt="Hero image">
+            </div>
+        </header>
+
+        <section class="vacancy section wrapper">
+            <h2>Вакансия: Оператор колл-центра</h2>
+
+            <div class="vacancy-block shadow">
+                <h3>Если вы готовы:</h3>
+
+                <div class="vacancy__items">
+                    <p class="vacancy__items-item">работать в команде, вести и развивать различные проекты</p>
+                    <p class="vacancy__items-item">учиться и узнавать новое, проходить обучение для повышения квалификации на уникальной платформе </p>
+                    <p class="vacancy__items-item">общаться с людьми, выявлять потребности и боли клиентов</p>
+                    <p class="vacancy__items-item">зарабатывать в сфере контакт-центра, разбираться и понимать бизнес-цели заказчиков</p>
+                </div>
+            </div>
+
+            <div class="vacancy-block shadow">
+                <h3>И у вас есть:</h3>
+
+                <div class="vacancy__items">
+                    <p class="vacancy__items-item">Компьютер, стабильный интернет, наушники/гарнитура с микрофоном для работы с телефонией и программами заказчика</p>
+                    <p class="vacancy__items-item">Навыки общения с клиентами, навыки продаж и работы с возражениями</p>
+                    <p class="vacancy__items-item">Внимательность, стрессоустойчивость, ответственность </p>
+                    <p class="vacancy__items-item">Готовность помогать людям</p>
+                </div>
+            </div>
+
+            <div class="vacancy-block shadow">
+                <h3>Помимо интересных задач мы готовы <br/> вам предложить:</h3>
+
+                <div class="vacancy__items">
+                    <p class="vacancy__items-item">Дистанционный формат работы</p>
+                    <p class="vacancy__items-item">Возможность подстроить график работы именно под ваши требования</p>
+                    <p class="vacancy__items-item">Работу по сниженным налогам по трудоустройству через самозанятость</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="form section wrapper">
+            <h2>Отклик на вакансию</h2>
+
+            <div class="form-block shadow">
+                <h3>Заполните форму</h3>
+
+                <div class="form__inputs">
+                    <input type="text" class="form__input form__input-name" name="name" placeholder="ФИО" required>
+                    <input type="text" class="form__input form__input-location" name="location" placeholder="Откуда ты?" required>
+                    <select class="form__input form__input-select form__input-work" name="work">
+                        <option value="Не выбрано" disabled selected>Как тебе комфортнее всего работать?</option>
+                        <option value="На входящих звонках">На входящих звонках</option>
+                        <option value="На исходящих звонках">На исходящих звонках</option>
+                    </select>
+                    <select class="form__input form__input-select form__input-days" name="days">
+                        <option value="Не выбрано" disabled selected>Дни</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select class="form__input form__input-select form__input-time" name="time">
+                        <option value="Не выбрано" disabled selected>Часы</option>
+                        <option value="2/2">2/2</option>
+                        <option value="2/5">2/5</option>
+                    </select>
+                    <input type="text" class="form__input form__input-tell" name="tell" placeholder="Номер телефона" required>
+                    <input type="text" class="form__input form__input-connection" name="connection" placeholder="Иной способ связи">
+                </div>
+
+                <div class="form__tools">
+                    <button class="form__tools-btn button" onclick="formSubmit()">
+                        Отправить
+                        <img class="button__svg" src="/assets/buttonArrow-9a2b3f11.svg" alt="@">
+                    </button>
+
+                    <p class="form__tools-status"></p>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.querySelector('.form__input-tell').oninput = (e) => {
+                console.log(e);
+                let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+                e.target.value = (x[1] ? '+' + x[1] : '') + (x[3] ? ' (' + x[2] + ') ' : x[2]) + (x[4] ? x[3] + '-' : x[3]) + (x[5] ? x[4] + '-' : x[4]) + (x[5])
+            }
+
+            function formSubmit() {
+                let inputs = document.querySelectorAll('.form__input')
+                let status = true
+
+                inputs.forEach((input) => {
+                    if (input.getAttribute('required') == null) return
+
+                    input.style.border = '1px solid #e5e5e5'
+
+                    if (!input.value || input.name == 'tell' && input.value.length != 18) {
+                        input.style.border = '1px solid #ba2323'
+                        status = false
+                    } 
+                })
+
+                if (status) {
+                    document.querySelector('.form__tools-status').innerHTML = 'Данные отправленны!'
+                    document.querySelector('.form__tools-status').style.color = '#e5e5e5'
+
+                    fetch('/api/send_main.php', {
+                        method: "POST",
+                        body: {
+                            email: 'dogerfantom6@gmail.com',
+                            subject: 'Тема письма',
+                            message: 'Текст письма',
+                        }
+                    })
+                    .then((response) => response.text())
+                    .catch((error) => console.error("Ошибка отправки почты", error));
+                } else {
+                    document.querySelector('.form__tools-status').innerHTML = 'Заполните все нужные поля'
+                    document.querySelector('.form__tools-status').style.color = '#ba2323'
+                }
+            }
+        </script>
+
+        <footer class="footer wrapper">
+            <div class="footer__header">
+                <img class="footer__header-logo" src="/assets/Logo-204cbb03.svg" alt="Logo">
+
+                <div class="footer__header-link">
+                    <div class="footer__header-link-svg">
+                        <a href="http://peoplecall.ru/#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="5" fill="#D9D9D9"></rect><rect width="40" height="40" rx="5" fill="url(#paint0_linear_248_185)"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M20.726 26.9415C20.726 26.9415 21.1772 26.8923 21.4083 26.6486C21.6199 26.4254 21.6125 26.0041 21.6125 26.0041C21.6125 26.0041 21.5844 24.0369 22.5149 23.7464C23.432 23.4608 24.6095 25.6488 25.8591 26.4902C26.8031 27.1263 27.5196 26.9871 27.5196 26.9871L30.859 26.9415C30.859 26.9415 32.6051 26.8359 31.7773 25.488C31.7088 25.3776 31.2943 24.4906 29.2951 22.6686C27.2005 20.7614 27.4817 21.0699 30.003 17.7704C31.5388 15.7612 32.1526 14.5345 31.9607 14.01C31.7785 13.5083 30.6487 13.6415 30.6487 13.6415L26.8899 13.6643C26.8899 13.6643 26.6111 13.6271 26.4045 13.7484C26.2027 13.8672 26.0719 14.1444 26.0719 14.1444C26.0719 14.1444 25.4776 15.6988 24.6841 17.0214C23.0101 19.8108 22.3413 19.9584 22.0674 19.7856C21.4303 19.3811 21.5893 18.1629 21.5893 17.2975C21.5893 14.5933 22.0075 13.4663 20.7762 13.1746C20.3678 13.0774 20.067 13.0138 19.0215 13.003C17.6802 12.9898 16.5455 13.0078 15.9023 13.3163C15.4743 13.5215 15.1442 13.98 15.3459 14.0064C15.5942 14.0388 16.1566 14.1552 16.455 14.5537C16.8401 15.0686 16.8267 16.2233 16.8267 16.2233C16.8267 16.2233 17.048 19.4063 16.3095 19.8012C15.8032 20.0725 15.1087 19.5191 13.6157 16.9878C12.8515 15.6916 12.2744 14.2585 12.2744 14.2585C12.2744 14.2585 12.1631 13.9908 11.9638 13.8468C11.7229 13.6727 11.3867 13.6187 11.3867 13.6187L7.81501 13.6415C7.81501 13.6415 7.27822 13.6559 7.08136 13.8852C6.90651 14.088 7.06791 14.5093 7.06791 14.5093C7.06791 14.5093 9.86434 20.9318 13.0313 24.1689C15.9353 27.1359 19.2318 26.9415 19.2318 26.9415H20.726Z" fill="white"></path><defs><linearGradient id="paint0_linear_248_185" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#AE4A84"></stop><stop offset="1" stop-color="#393185"></stop></linearGradient></defs></svg>
+                        </a>
+
+                        <a href="https://t.me/servizoria_vacancy">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="5" fill="#D9D9D9"></rect><rect width="40" height="40" rx="5" fill="url(#paint0_linear_248_191)"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M14.2894 16.9937C12.2859 17.8685 10.2274 18.7673 8.34505 19.8042C7.36215 20.5238 8.6685 21.0329 9.8941 21.5104C10.0889 21.5863 10.2817 21.6614 10.4629 21.7364C10.6138 21.7828 10.7671 21.8317 10.9225 21.8812C12.2856 22.3154 13.8054 22.7997 15.1288 22.0712C17.3026 20.8225 19.354 19.3788 21.4039 17.9362C22.0755 17.4636 22.7469 16.9911 23.4224 16.5256C23.4541 16.5053 23.4898 16.4822 23.5288 16.4569C24.1043 16.0838 25.3985 15.2449 24.9198 16.4009C23.7878 17.6389 22.5752 18.7347 21.3561 19.8367C20.5344 20.5792 19.7098 21.3246 18.9048 22.1179C18.2037 22.6876 17.4756 23.8332 18.2607 24.6309C20.0689 25.8967 21.9054 27.1319 23.7408 28.3664C24.3381 28.7681 24.9353 29.1697 25.5313 29.5724C26.5415 30.3789 28.1203 29.7265 28.3423 28.4662C28.4411 27.8865 28.5403 27.3068 28.6394 26.7271C29.1874 23.5232 29.7356 20.3181 30.2198 17.1037C30.2857 16.5995 30.3603 16.0953 30.4349 15.5909C30.6158 14.3683 30.797 13.1442 30.8536 11.9151C30.7078 10.6884 29.2204 10.9582 28.3928 11.234C24.1384 12.8528 19.9266 14.5917 15.7314 16.3612C15.2562 16.5717 14.7744 16.782 14.2894 16.9937Z" fill="white"></path><defs><linearGradient id="paint0_linear_248_191" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#AE4A84"></stop><stop offset="1" stop-color="#393185"></stop></linearGradient></defs></svg>
+                        </a>
+                    </div>
+
+                    <div class="footer__header-link-text">
+                        <a href="mailto:info@servizoria.ru">info@servizoria.ru</a>
+                        <a href="mailto:sales@servizoria.ru">sales@servizoria.ru</a>
+                        <a href="tel:74952680244">+7 (495) 268 02 44</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__footer">
+                <a href="http://peoplecall.ru/#">политика конфиденциальности</a>
+
+                <a href="http://peoplecall.ru/#">пользовательское соглашение</a>
+
+                <p>контакт центр © 2023 все права защищены</p>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>

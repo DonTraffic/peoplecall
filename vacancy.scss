@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+@mixin phone {
+    @media screen and (max-width: 425px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin laptopL {
+    @media screen and (max-width: 1440px) {
+        @content;
+    }
+}
+
+$color-purple: #AE4A84;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+
+    font-family: Manrope Variable,sans-serif;
+}
+
+.wrapper{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+main{
+    padding-top: 2rem;
+
+    @include laptop{
+        padding: 1rem;
+    }
+}
+
+h1, h2{
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: .025em;
+    font-weight: 100;
+}
+
+h3{
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: .025em;
+    font-weight: 100;
+}
+
+.section{
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.shadow{
+    box-shadow: 0px 0px 14px 6px rgba(0, 0, 0, 0.2);
+}
+
+.button{
+    width: fit-content;
+
+    background-image: linear-gradient(180deg, $color-purple 0%, $color-purple 50%, #393185 100%);
+    background-position: 0 -100%;
+    background-size: 100% 200%;
+    background-color: transparent;
+
+    padding: .75rem 1.25rem;;
+    border: none;
+    border-radius: 0.75rem;
+
+    font-size: 1.25rem;
+    color: rgba(255,255,255,1);
+
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: .3s;
+
+    &:hover{
+        background-position: 0 -200%;
+        cursor: pointer;
+    }
+
+    &__svg{
+        margin-left: .75rem;;
+    }
+}
+
+.header{
+    background: center/cover no-repeat url('./assets/hero-decor-c0b79506.webp');
+    padding: 2rem;
+    border-radius: 1rem;
+
+    &__menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding-bottom: 1.75rem;
+
+        &-logo{
+            max-width: 150px;
+            width: 100%;
+        }
+
+        &-nav{
+            display: flex;
+            gap: 24px;
+
+            &-link{
+                color: black;
+                text-decoration: none;
+                transition: .4s ease;
+
+                &:hover{
+                    cursor: pointer;
+                    color: $color-purple;
+                }
+            }
+        }
+
+        @include laptop{
+            display: none;
+        }
+    }
+
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+
+        @include laptop{
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &-left{
+            max-width: 28rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3rem;
+
+            @include laptop{
+                max-width: 100%;
+                gap: .5rem;
+                margin-bottom: 2rem;
+
+                h1{
+                    text-align: center;
+                }
+
+                button{
+                    margin: 0 auto;
+                }
+            }
+
+            &-text{
+                margin: 1.25rem 0 2.5rem 0;
+
+                @include laptop{
+                    text-align: center;
+                }
+            }
+        }
+
+        &-right{
+            max-width: 50%;
+            width: 100%;
+        }
+    }
+}
+
+.vacancy{
+    &-block{
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+
+    h3{
+        margin-bottom: 2rem;
+    }
+
+    &__items{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        &-item{
+            max-width: 30%;
+            min-width: 300px;
+            padding-left: 16px;
+            position: relative;
+
+            @include phone{
+                min-width: 1%;
+                max-width: 100%;
+                width: 100%;
+            }
+
+            &:before{
+                position: absolute;
+                left: 0;
+                top: 4px;
+
+                content: '';
+                width: 8px;
+                height: 8px;
+                background-color: #393185;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+.form{
+    &-block{
+        margin-top: 3rem;
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+
+    &__inputs{
+        margin: 2rem 0;
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr; 
+        gap: 1rem; 
+        grid-template-areas: 
+            "form__input-name form__input-name form__input-location form__input-location"
+            "form__input-work form__input-work form__input-days form__input-time"
+            "form__input-tell form__input-tell form__input-connection form__input-connection"; 
+
+        @include phone{
+            grid-template-columns: 1fr 1fr; 
+            gap: 1rem; 
+            grid-template-areas: 
+                "form__input-name form__input-name"
+                "form__input-location form__input-location"
+                "form__input-work form__input-work"
+                "form__input-days form__input-time"
+                "form__input-tell form__input-tell"
+                "form__input-connection form__input-connection"; 
+        }
+    }
+
+    &__input{
+        padding: 1rem;
+        border-radius: .5rem;
+        border: 1px solid #e5e5e5;
+
+        &::placeholder{
+            color: black;
+        }
+
+        &-select{
+            padding: 1rem .8rem;
+        }
+
+        &-name{ grid-area: form__input-name; }
+        &-location{ grid-area: form__input-location; }
+        &-work{ grid-area: form__input-work; }
+        &-days{ grid-area: form__input-days; }
+        &-time{ grid-area: form__input-time; }
+        &-tell{ grid-area: form__input-tell; }
+        &-connection{ grid-area: form__input-connection; }
+    }
+
+    &__tools{
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+}
+
+.footer{
+    &__header{
+        display: flex;
+        justify-content: space-between;
+
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #e5e5e5;
+
+        @include phone{
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        &-logo{
+            max-width: 200px;
+            width: 100%;
+        }
+
+        &-link{
+            display: flex;
+            align-items: flex-end;
+
+            @include phone{
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            a{
+                text-decoration: none;
+                color: #393185;
+            }
+
+            &-text{
+                margin-left: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+
+                @include phone{
+                    margin-left: 0;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    &__footer{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+
+        @include tablet{
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        a{
+            color: #393185;
+        }
+
+        p{
+            @include tablet{
+                text-align: center;
+            }
+        }
+    }
+}
