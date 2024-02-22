@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>вакансии карьера</title>
     <link rel="stylesheet" href="vacancy.css">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
 </head>
 
 <body>
@@ -20,7 +21,7 @@
             <a class="mobile-menu__nav-link" href="http://peoplecall.ru/blog">блог</a>
         </div>
 
-        <button class="mobile-menu__btn button">
+        <button class="mobile-menu__btn button" onclick="showMenu(); location.hash = '#form-callback'">
             заказать услуги
             <img class="button__svg" src="./assets/buttonArrow-9a2b3f11.svg" alt="@">
         </button>
@@ -47,7 +48,7 @@
                     <rect width="30" height="2" rx="1" fill="currentColor"></rect><rect y="8" width="30" height="2" rx="1" fill="currentColor"></rect><rect y="16" width="30" height="2" rx="1" fill="currentColor"></rect>
                 </svg>
 
-                <button class="header__menu-btn button">
+                <button class="header__menu-btn button" onclick="location.hash = '#form-callback'">
                     заказать услуги
                     <img class="button__svg" src="./assets/buttonArrow-9a2b3f11.svg" alt="@">
                 </button>
@@ -61,7 +62,7 @@
                         жалобы или запросы на техническую поддержку, обеспечивая клиентам качественное обслуживание и
                         удовлетворение их потребностей.
                     </p>
-                    <button class="header__content-left-btn button">
+                    <button class="header__content-left-btn button" onclick="location.hash = '#form-callback'">
                         заказать обратный звонок
                         <img class="button__svg" src="./assets/buttonArrow-9a2b3f11.svg" alt="@">
                     </button>
@@ -123,7 +124,7 @@
             </div>
         </section>
 
-        <section class="form section wrapper">
+        <section class="form section wrapper" id="form-callback">
             <h2>Отклик на вакансию</h2>
 
             <div class="form-block shadow">
