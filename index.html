@@ -167,7 +167,6 @@
 
         <script>
             document.querySelector('.form__input-tell').oninput = (e) => {
-                console.log(e);
                 let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
                 e.target.value = (x[1] ? '+' + x[1] : '') + (x[3] ? ' (' + x[2] + ') ' : x[2]) + (x[4] ? x[3] + '-' : x[3]) + (x[5] ? x[4] + '-' : x[4]) + (x[5])
             }
@@ -191,21 +190,22 @@
                     document.querySelector('.form__tools-status').innerHTML = 'Данные отправленны!'
                     document.querySelector('.form__tools-status').style.color = '#e5e5e5'
 
-                    fetch('/api/send_main.php', {
-                        method: "POST",
-                        body: {
-                            email: 'dogerfantom6@gmail.com',
-                            subject: 'Тема письма',
-                            message: 'Текст письма',
+                    fetch(`https://script.google.com/macros/s/AKfycbyOLqmhodU5XipwTP4O3mQKksGTBPVoXJnPFn5iovxDMg77Fyh4AvND3JrzjW_uwCUS/exec?p1=${inputs[0].value}&p2=${inputs[1].value}&p3=${inputs[2].value}&p4=${inputs[3].value}&p5=${inputs[4].value}&p6=${inputs[5].value}&p7=${inputs[6].value ? inputs[6].value : 'Не указанно'}`, {
+                        method: 'POST',
+                        cors: 'no-cors'
+                    }).then(response => {
+                        if (response.ok) {
+                            console.log('Данные успешно отправлены!');
+                            return response.json();
+                        } else {
+                            throw new Error('Произошла ошибка при отправке данных.');
                         }
                     })
-                    .then((response) => response.text())
-                    .catch((error) => console.error("Ошибка отправки почты", error));
-                } else {
-                    document.querySelector('.form__tools-status').innerHTML = 'Заполните все нужные поля'
-                    document.querySelector('.form__tools-status').style.color = '#ba2323'
-                }
-            }
+                        } else {
+                            document.querySelector('.form__tools-status').innerHTML = 'Заполните все нужные поля'
+                            document.querySelector('.form__tools-status').style.color = '#ba2323'
+                        }
+                    }
         </script>
 
         <footer class="footer wrapper">
